@@ -1,0 +1,406 @@
+/* {
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+
+} */
+
+body {
+    font-family: 'arial';
+}
+
+
+.carrossel-container {
+    position: relative;
+    max-width: 1600px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagens-carrossel {
+    display: flex;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* ====================================================================================== */
+    
+
+.navbar { 
+    background-color: #2c2c2c;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px;  
+    z-index: 99;
+}
+
+.navbar>div{ 
+    display: flex;
+    align-items:center;
+    justify-content: space-between; 
+    position: relative;
+}
+
+.logo {
+    color: #0084ff;
+}
+.logo span{
+    color: #fff;
+ }
+
+ nav ul{
+    display: flex; 
+    list-style: none; 
+    align-items: center;
+}
+
+.nav-icon-container{ 
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img { 
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child{ 
+    margin-right: 1rem;
+}
+
+nav ul li{
+    color: #fff;
+    margin-right: 1.5rem;
+}
+
+nav ul li:hover{
+    transform: translateY(-5px);
+    transition: all 0.2s;
+    font-weight: bold;
+
+}
+
+.menu-button { 
+    display: none;
+}
+/* ====================================================================================== */
+
+header{
+    background-image: radial-gradient(#fff, #c7c7);
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+  height: 100vh; 
+}
+
+
+/* Media Queries */ 
+@media (max-width: 800px){
+    .logo{
+        font-size: 1.2rem;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    nav{
+        position: absolute;
+        background-color: #2c2c2c;
+        width: 100%;
+        top: 62px; 
+        display: none;
+    }
+
+nav ul {
+    flex-direction: column; 
+    }
+
+nav ul li {
+    text-align: center; 
+    padding: 0.8rem; 
+    
+    }
+
+
+}
+
+/* Header*/
+
+/* Main Content- Conteúdo Principal*/
+
+main{
+    background-color:#ebebeb;
+}
+.gray-background {
+    background-color: #2c2c2c;
+}
+
+.page-inner-content{
+    max-width: 1280px; 
+    margin: 0 auto; 
+}
+
+.cols{
+    display: grid;
+    align-items: center; 
+    padding: 4rem 1rem;
+    justify-content: space-evenly; 
+}
+
+.cols-3{
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 3rem; 
+    
+}
+
+.cols-3 img{
+    max-width: 100%;
+    border-radius: 10%;
+    
+}
+
+.cols4 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); 
+    gap: 2rem; 
+    padding: 2rem; 
+}
+
+.product {
+    background-color: #fff; 
+    border-radius: 10px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; 
+    object-fit: cover; 
+}
+
+.product-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+.rate {
+    color: #0084ff;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #e84a5f;
+    margin-top: 0.5rem;
+    font-weight: 700;
+}
+
+.product-price span {
+    font-weight: 600;
+}
+
+.cols > * {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cols > *:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.section-title {
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.subtitle-underline {
+    width: 6rem;
+    height: 2px;
+    background-color: #0084ff;
+    margin: 0.5rem auto;
+}
+
+
+@media (max-width: 1024px) {
+    .cols4 {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .cols4 {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 480px) {
+    .cols4 {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+.subtitle-underline{
+    width: 100px;
+    height: 5;
+    background: #0084ff;
+    border-radius: 9999px;
+    margin: 8px auto 0 auto;
+}
+
+.exclusive-container{
+    color: #fff;
+    flex-direction: row-reverse;
+    padding: 5rem 1rem;
+}
+
+.exclusive-container img{
+    max-width: 500px;
+}
+
+/* Media queries*/
+
+@media(max-width: 800px){
+    .section-title{
+        font-size: 1rem;
+    }
+
+    .cols-3{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+   
+
+
+    .product-name, .product-price, .rate{
+        max-height: 1rem;
+        overflow: hidden;
+        font-size: 0.8rem;
+    }
+
+    
+    .exclusive-container{
+        flex-direction: column-reverse;
+    }
+
+    .exclusive-container img{
+        margin-bottom: 4rem;
+
+    }
+
+/* Main Content */
+
+/* Depoimentos*/
+    
+    .testimonials{
+        display: flex;
+        padding: 4rem 1rem;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .testimonial{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 30%;
+        text-align: center;
+        box-shadow: 0 0 15px;
+        padding: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .testimonial:hover{
+        transform: translateY(-5px);   
+    }
+
+    .testimonial p{
+        margin: 5px;   
+    }
+
+       .testimonial p:first-child{
+        font-weight: bold;
+        font-size: 5rem;
+        color: #0084ff;           
+        margin-top: 3rem;
+        line-height: 2rem;
+    }
+
+    .testimonial p:last-child{
+        font-weight: bold;    
+    }
+
+    /*Media queries */
+
+    @media (max-width: 800px) {
+        .testimonials{ 
+            flex-direction: column;
+        }
+
+        .testimonial{
+            margin-bottom: 1.2rem;
+        }
+    }
+
+/*====================================================*/
+
+/*carrossel-2*/
+
+.carrossel-container-2{
+    background-image: radial-gradient(#fff, #c7c7);
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+  height: 100vh;
+}
+}
+
